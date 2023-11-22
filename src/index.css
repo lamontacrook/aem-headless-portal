@@ -7,6 +7,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -227,11 +229,14 @@ div[role=status] {
   padding-top: 200px;
 }
 
+.App {
+  max-width: 1600px;
+  margin: auto;
+}
+
 :root {
-  --main-accent-color:#ffc719;
-  --hero-teaser-height:100vh;
-  --hero-teaser-width: 100vw;
-  --hero-teaser-positon: sticky;
+  --main-accent-color:#DA2302;
+
   --featured-teaser-direction: row-reverse;
   --highlight-background-color: red;
   --main-text-color: rgba(41,41,41);
@@ -267,6 +272,23 @@ div[role=status] {
   --line-height-l: 76px;
   --body-font-family: adobe-clean, arial, sans-serif;
   --body-title-font-family: var(--body-font-family);
+
+  /* hero */
+  --hero-teaser-height:600px;
+  --hero-teaser-width: 100%;
+  --hero-teaser-positon: relative;
+  --hero-image-position: absolute;
+  --hero-border-radius: 0 0 5px 5px;
+
+  /* header */
+  --header-max-height: 500px;
+  --header-min-height: 300px;
+
+  /* nav */
+  --nav-position: absolute;
+  --nav-background-color: rgba(255, 255, 255, .5);
+  --nav-padding: 16px 0;
+  
 }
 
 .blue-box {

@@ -1,7 +1,7 @@
 header nav {
-  position: fixed;
+  position: var(--nav-position);
   width: 100%;
-  background: var(--main-color-opacity);
+  background: var(--nav-background-color);
   z-index: 90;
   transition: all .3s;
   border-bottom: 1px solid hsla(0,0%,100%,.2);
@@ -221,7 +221,7 @@ a:focus::after {
     display: flex;
     justify-content: space-between;
     height: var(--nav-height);
-    padding: 16px 2rem;
+    padding: var(--nav-padding);
   }
 
   header nav .nav-sections > ul > li.nav-drop {

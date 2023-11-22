@@ -1,4 +1,4 @@
-body {
+/*body {
   background-color: var(--main-color);
   background-image: unset;
 }
@@ -20,4 +20,4 @@ body {
 .main-body > .block:nth-child(1) {
   padding-top:64px;
   opacity: 1;
-}
+} */

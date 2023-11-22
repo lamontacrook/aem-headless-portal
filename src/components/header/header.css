@@ -8,6 +8,8 @@ it.
 
 header {
   position: relative;
+  max-height: var(--header-max-height);
+  min-height: var(--header-min-height);
 }
 
 header.home-article img {

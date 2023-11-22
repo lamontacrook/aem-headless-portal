@@ -5,7 +5,6 @@ import Screen from './components/screen';
 import Preview from './components/preview';
 import Settings from './utils/settings';
 import { ErrorBoundary } from 'react-error-boundary';
-import Screendetails from './components/screendetails';
 import Error from './components/error';
 import { useErrorHandler } from 'react-error-boundary';
 import { ThreeDots } from 'react-loader-spinner';
@@ -99,7 +98,7 @@ const App = () => {
                     sessionStorage.removeItem('loggedin');
                     sessionStorage.removeItem('auth');
                   }}
-                ><Screendetails /></ErrorBoundary>
+                ></ErrorBoundary>
               } />
 
             </Routes>

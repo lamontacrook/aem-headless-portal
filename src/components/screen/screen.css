@@ -6,13 +6,29 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+.main-body {
+  display: grid;
+  grid-template-columns: 33.334% 66.667%;
+  grid-template-rows: auto;
+  grid-template-areas: "sidebar block";
+}
+
 .main-body > .block {
+  grid-area: block;
   width: 100%;
   top:unset;
   left:unset;
   position: unset;
-  
   background-color: white;
+  margin: unset;
+  padding: 32px 0;
+}
+
+.main-body > .sidebar {
+  grid-area: sidebar;
+  background-color: red;
+  min-height: 200px;
   margin: unset;
   padding: 32px 0;
 }

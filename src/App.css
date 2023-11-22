@@ -26,7 +26,8 @@ nav {
 
 .App {
   padding:0;
-  margin:0;
+  margin:auto;
+  max-width: 1600px;
 }
 
 body {

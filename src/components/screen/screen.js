@@ -35,11 +35,11 @@ const Screen = () => {
 
   useEffect(() => {
     const sdk = prepareRequest(context);
-    sdk.runPersistedQuery('aem-demo-assets/gql-demo-configuration', { path: configPath })
+    sdk.runPersistedQuery('portal/gql-demo-configuration', { path: configPath })
       .then(({ data }) => {
         if (data) {
           setConfiguration(data);
-          sdk.runPersistedQuery(`aem-demo-assets/gql-demo-screen-${version}`, { path: path !== '' ? path : data.configurationByPath.item.homePage._path })
+          sdk.runPersistedQuery(`portal/gql-demo-screen-${version}`, { path: path !== '' ? path : data.configurationByPath.item.homePage._path })
             .then(({ data }) => {
               if (data) {
                 data.screen.body._metadata.stringMetadata.map((metadata) => {
@@ -80,6 +80,7 @@ const Screen = () => {
       }
 
       <div className='main-body'>
+        <div className='sidebar'>sidebar</div>
         {data && data.screen && data.screen.body.block.map((item) => (
           <div
             key={`${item.__typename
