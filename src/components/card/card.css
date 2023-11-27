@@ -1,0 +1,54 @@
+.main-body .card {
+  width: 100%;
+  min-height: 325px;
+  border-radius: 8px;
+  position: relative;
+  z-index: 0;
+  background: transparent;
+  margin: 0 0 22px 0;
+}
+
+.main-body .card-content {
+  line-height: 24px;
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+}
+
+.main-body .card-content p, .main-body .card-content h4 {
+  color: white;
+}
+
+.main-body .card-content p {
+  line-height: 28px;
+  padding: 14px 0;
+}
+
+.main-body .card-content .cta.button {
+  background-color: var(--main-accent-color);
+  height: 53px;
+  position: relative;
+  min-width: 265px;
+}
+
+.main-body .card-content .cta.button a {
+  margin: auto;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 28px;
+}
+
+.main-body .cardguidemodel img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  border-radius: 8px;
+}

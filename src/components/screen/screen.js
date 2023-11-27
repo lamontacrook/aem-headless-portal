@@ -80,24 +80,46 @@ const Screen = () => {
       }
 
       <div className='main-body'>
-        <div className='sidebar'>sidebar</div>
-        {data && data.screen && data.screen.body.block.map((item) => (
-          <div
-            key={`${item.__typename
-              .toLowerCase()
-              .replace(' ', '-')}-block-${i}`}
-            className='block'
-          >
+        <div className='sidebar'>
+          <Delayed waitBeforeShow={500} key='sidebar'>
+            <div className='sidebar-inner'>
+              <strong>Useful Links</strong>
+              <ul>
+                {data && data.screen && data.screen.body.sidebar && data.screen.body.sidebar.linkModel.map((item) => (
 
-            <Delayed waitBeforeShow={200}>
+                  <li key={item.linkName}><a href={item.url} className={item.linkType}>{item.linkName}</a></li>
+
+                ))}
+              </ul>
+            </div>
+          </Delayed>
+        </div>
+
+        <div className='block'>
+          {data && data.screen && data.screen.body.block.map((item) => (
+            <Delayed waitBeforeShow={200} key={item.__typename}>
               <ModelManager
                 key={`${item.__typename}-entity-${i++}`}
                 content={item}
                 config={config.configurationByPath.item}
               ></ModelManager>
             </Delayed>
-          </div>
-        ))}
+
+          ))}
+        </div>
+
+        <div className='cards'>
+          {data && data.screen && data.screen.body.cards.map((item) => (
+            <Delayed waitBeforeShow={200} key={item.__typename}>
+              <ModelManager
+                key={`${item.__typename}-entity-${i++}`}
+                content={item}
+                config={config.configurationByPath.item}
+              ></ModelManager>
+            </Delayed>
+
+          ))}
+        </div>
       </div>
       <footer>
         {config && config.configurationByPath && config.configurationByPath.item.footerExperienceFragment &&

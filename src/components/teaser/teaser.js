@@ -69,10 +69,6 @@ const imageSizesHero = [
 
 const Teaser = ({ content, config }) => {
   const context = useContext(AppContext);
-  let inFrame = false;
-  if(window.location !== window.parent.location) {
-    inFrame = true;
-  }
   
   const renderAsset = ({asset}) => {    
     if(asset && Object.prototype.hasOwnProperty.call(content.asset, 'format'))
@@ -84,7 +80,7 @@ const Teaser = ({ content, config }) => {
   };
 
   const editorProps = {
-    itemId: `urn:aemconnection:${content._path}/jcr:content/data/master`,
+    itemID: `urn:aemconnection:${content._path}/jcr:content/data/master`,
     itemType: 'reference',
     itemfilter: 'cf',
     'data-editor-itemlabel': `Teaser(${content.style})`
@@ -92,7 +88,7 @@ const Teaser = ({ content, config }) => {
 
   return (
     <div {...editorProps} itemScope>
-      <section className={'teaser ' + content.style + (inFrame ? ' iframe' : '')}>
+      <section className={'teaser ' + content.style}>
         <div className='container'>
           { renderAsset(content) }
 

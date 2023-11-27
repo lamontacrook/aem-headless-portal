@@ -1,17 +1,21 @@
 import React from 'react';
 import Teaser from '../../components/teaser';
-import ImageList from '../../components/imagelist';
+import Card from '../../components/card';
+import Article from '../../components/article';
 import PageRef from '../../components/pageref';
 import PropTypes from 'prop-types';
 
 export const componentMapping = {
   Teaser,
-  ImageList,
-  PageRef
+  Card,
+  PageRef,
+  Article
 };
 
 const ModelManager = ({ content, config }) => {
-  const type = content.__typename.replace(/Model/g, '');
+  if(!content.__typename) return;
+  let type = content.__typename.replace(/Model/g, '');
+  if(type.includes('Card'))  type = 'Card';
   const Component = componentMapping[type];
  
   if (typeof Component !== 'undefined')

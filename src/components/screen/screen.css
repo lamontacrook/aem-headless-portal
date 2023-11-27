@@ -9,31 +9,58 @@ body {
 
 .main-body {
   display: grid;
-  grid-template-columns: 33.334% 66.667%;
+  grid-template-columns: 284px auto;
+  column-gap: 10px;
   grid-template-rows: auto;
   grid-template-areas: "sidebar block";
 }
 
+.cards, .block, .sidebar {
+  margin: 32px auto;
+  border-radius: 8px;
+  height: 100%;
+}
+
+.main-body > .cards {
+  width: 100%;
+  display: none;
+}
+
 .main-body > .block {
   grid-area: block;
-  width: 100%;
-  top:unset;
-  left:unset;
-  position: unset;
+  width: 96%;
+  position: relative;
   background-color: white;
-  margin: unset;
-  padding: 32px 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0 12px;
 }
 
 .main-body > .sidebar {
   grid-area: sidebar;
-  background-color: red;
-  min-height: 200px;
-  margin: unset;
-  padding: 32px 0;
+  border: .75px solid black;
+  border-radius: 8px;
+  width: 100%;
+  margin-left: 0;
+  background-color: var(--main-light-background);
 }
 
-.main-body > .block:nth-child(1) {
-  padding-top:64px;
-  opacity: 1;
+.main-body > .sidebar > .sidebar-inner {
+  margin: 60px auto;
+  width: 75%;
+}
+.main-body > .sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+@media (min-width: 1024px) {
+  .main-body {
+    grid-template-columns: 284px auto 390px;
+    grid-template-areas: "sidebar block cards";
+  }
+
+  .main-body .cards {
+    display: unset;
+  }
 }

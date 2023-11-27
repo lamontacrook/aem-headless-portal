@@ -270,7 +270,7 @@ div[role=status] {
   --h1FontWeight: 600;
   --h1FontSize: 72px;
   --line-height-l: 76px;
-  --body-font-family: adobe-clean, arial, sans-serif;
+  --body-font-family: __Lato_cea4ce, __Lato_Fallback_cea4ce, adobe-clean, arial, sans-serif;
   --body-title-font-family: var(--body-font-family);
 
   /* hero */
@@ -288,6 +288,13 @@ div[role=status] {
   --nav-position: absolute;
   --nav-background-color: rgba(255, 255, 255, .5);
   --nav-padding: 16px 0;
+
+  /* seperator */
+  --seperator-display: block;
+  --seperator-height: 2px;
+  --seperator-color: var(--main-accent-color);
+  --seperator-width: 128px;
+  --seperator-radius: 3px;
   
 }
 
@@ -295,3 +302,15 @@ div[role=status] {
   border: 2px solid blue !important;
   background-color: #0045ff;
 }
+
+a.link {
+  font-size: 16px;
+  color: var(--main-text-color);
+  line-height: 22px;
+}
+
+a.link:hover {
+  color: var(--main-accent-color);
+}
+
+@import "font.css";

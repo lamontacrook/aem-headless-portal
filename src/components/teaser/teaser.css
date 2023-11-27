@@ -2,6 +2,7 @@
   position: var(--hero-teaser-position);
   width: var(--hero-teaser-width);
   height: var(--hero-teaser-height);
+  min-height: var(--hero-teaser-height);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,8 +39,8 @@ header .hero {
 .hero .content-block {
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 5%;
+  transform: translateY(-50%);
   text-align: center;
 }
 
@@ -70,11 +71,12 @@ header .hero {
 } */
 
 .hero .content-block .seperator {
-  width: 128px;
-  height: 5px;
-  display: block;
+  width: var(--seperator-width);
+  height: var(--seperator-height);
+  display: var(--seperator-display);
+  border-radius: var(--seprator-radius);
   content: "";
-  background-color: var(--main-accent-color);
+  background-color: var(--seperator-color);
   transition: width .4s ease-in-out;
   margin: auto;
 }
@@ -112,8 +114,7 @@ header .hero {
 }
 
 .teaser.featured>.container>.content-block p {
-  font-size: 3vw;
-  line-height: 1.5;
+  line-height: 36px;
   margin: 16px 0 13.5px;
   text-align: justify;
 }
