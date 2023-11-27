@@ -93,7 +93,7 @@ const Navigation = ({ className, config, screen }) => {
               {nav && nav.data.screenList.items.map((item) => (
                 <li key={item._path}><Link to={LinkManager(item._path, config, context)} className={`navItem ${className}`} name={getName(item._metadata)}>{getName(item._metadata)}</Link></li>
               ))}
-              
+              <li key='settings'><Link to='/settings' className={`navItem ${className}`} name='Settings'>Settings</Link></li>
             </ul>
           )}
         </div>

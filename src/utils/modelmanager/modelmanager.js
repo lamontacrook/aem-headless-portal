@@ -3,13 +3,15 @@ import Teaser from '../../components/teaser';
 import Card from '../../components/card';
 import Article from '../../components/article';
 import PageRef from '../../components/pageref';
+import ImageList from '../../components/imagelist';
 import PropTypes from 'prop-types';
 
 export const componentMapping = {
   Teaser,
   Card,
   PageRef,
-  Article
+  Article,
+  ImageList
 };
 
 const ModelManager = ({ content, config }) => {

@@ -35,7 +35,7 @@ const Screen = () => {
 
   useEffect(() => {
     const sdk = prepareRequest(context);
-    sdk.runPersistedQuery('portal/gql-demo-configuration', { path: configPath })
+    sdk.runPersistedQuery('portal/gql-demo-configuration', { path: configPath, aem: 'sucks' })
       .then(({ data }) => {
         if (data) {
           setConfiguration(data);
@@ -68,6 +68,13 @@ const Screen = () => {
 
   }, [handleError, navigate, path, version, context]);
 
+  const editorProps = data && data.screen && data.screen.body._path && {
+    itemID: `urn:aemconnection:${data.screen.body._path}/jcr:content/data/master`,
+    itemType: 'reference',
+    itemfilter: 'cf',
+    'data-editor-itemlabel': 'Screen'
+  };
+
   let i = 0;
 
   return (
@@ -79,21 +86,20 @@ const Screen = () => {
         <Header data={data} content={data.screen.body.header} config={config} className='screen' />
       }
 
-      <div className='main-body'>
-        <div className='sidebar'>
-          <Delayed waitBeforeShow={500} key='sidebar'>
+      <div className='main-body' {...editorProps} itemScope>
+        <Delayed waitBeforeShow={500} key='sidebar'>
+          <div className='sidebar'>
             <div className='sidebar-inner'>
               <strong>Useful Links</strong>
               <ul>
                 {data && data.screen && data.screen.body.sidebar && data.screen.body.sidebar.linkModel.map((item) => (
-
                   <li key={item.linkName}><a href={item.url} className={item.linkType}>{item.linkName}</a></li>
-
                 ))}
               </ul>
             </div>
-          </Delayed>
-        </div>
+
+          </div>
+        </Delayed>
 
         <div className='block'>
           {data && data.screen && data.screen.body.block.map((item) => (
@@ -110,7 +116,7 @@ const Screen = () => {
 
         <div className='cards'>
           {data && data.screen && data.screen.body.cards.map((item) => (
-            <Delayed waitBeforeShow={200} key={item.__typename}>
+            <Delayed waitBeforeShow={200} key={`${item.__typename}-entity-${i++}`}>
               <ModelManager
                 key={`${item.__typename}-entity-${i++}`}
                 content={item}

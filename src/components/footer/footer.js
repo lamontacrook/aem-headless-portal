@@ -24,14 +24,14 @@ const Footer = ({ config }) => {
       config._authorUrl.replace('.html', '.model.json');
 
     const walk = [':items', 'root', ':items', 'container', ':items', 'container', ':items'];
-
     pageRef(url, context, walk)
       .then((res) => {
         res.image.src = `${context.serviceURL}${res?.image?.src.substring(1)}`;
         setFooter(res);
       })
       .catch((error) => {
-        handleError(error);
+        console.log(error);
+        setFooter('');
       });
 
   }, [config, handleError, context]);

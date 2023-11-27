@@ -15,7 +15,7 @@ const Card = ({ content, config }) => {
   };
 
   return (
-    <div {...editorProps} className={`card ${cardType?.toLowerCase()}`} itemScope>
+    <div {...editorProps} className={`card ${cardType?.toLowerCase()}`} key={content._path} itemScope>
       <div className='card-content'>
         <Element itemProp='title' itemType='text' data-editor-itemlabel='Title'>{content.title}</Element>
         <div className='content' itemProp='description' itemType='richtext' data-editor-itemlabel='Description'>{mapJsonRichText(content.description.json)}</div>

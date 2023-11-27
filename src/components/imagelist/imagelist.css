@@ -13,16 +13,21 @@ it.
 .image-grid .list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   gap: 90px 16px;
 }
 
 .image-grid>.list .list-item {
-  flex-basis: 350px;
+  flex-basis: 270px;
+}
+
+.image-grid > .list .list-item picture {
+  height: 200px;
+  display: block;
 }
 
 .image-grid>.list .list-item::after {
-  flex-basis: 350px;
+  flex-basis: 200px;
   content: "";
 }
 
@@ -52,15 +57,16 @@ it.
 }
 
 .image-grid>.list .list-item .details li {
+  padding: 3px 0;
   line-height: 1.1em;
 }
 
 .image-grid.list-container .list .list-item img {
   object-fit: cover;
   max-width: 100%;
-  height: 100%;
   vertical-align: middle;
   border-radius: 9px;
+  height: auto;
 }
 
 .slider-list.list-container .list .list-item {

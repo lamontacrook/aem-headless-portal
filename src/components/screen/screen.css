@@ -43,6 +43,7 @@ body {
   width: 100%;
   margin-left: 0;
   background-color: var(--main-light-background);
+  height: fit-content;
 }
 
 .main-body > .sidebar > .sidebar-inner {
