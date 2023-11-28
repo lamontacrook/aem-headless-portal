@@ -3,8 +3,8 @@ import BrokenImage from '../media/broken.jpg';
 
 const accessToken = 'https://20409-gqldemo202212-stage.adobeioruntime.net/api/v1/web/gql-demo-jwt/service-credentials';
 const defaultEndpoint = '/content/_cq_graphql/portal/endpoint.json';
-const defaultProject = 'gql-demo-template';
-const defaultServiceURL = 'https://publish-p24020-e1129912.adobeaemcloud.com/';
+const defaultProject = 'trane-portal';
+const defaultServiceURL = 'https://publish-p124331-e1227315.adobeaemcloud.com/';
 const defaultPlaceholdersExtensionURL = 'https://1154643-geoipplaceholders.adobeio-static.net/api/v1/web/geoip-placeholders';
 
 export const AppContext = createContext({

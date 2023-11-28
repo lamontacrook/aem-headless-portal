@@ -80,7 +80,7 @@ const Screen = () => {
   return (
     <React.Fragment>
       <Helmet>
-        <title>WKND: {title}</title>
+        <title>{title} - Trane®</title>
       </Helmet>
       {data && data.screen && data.screen.body.header && config.configurationByPath &&
         <Header data={data} content={data.screen.body.header} config={config} className='screen' />
