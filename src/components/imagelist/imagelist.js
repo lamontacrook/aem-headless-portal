@@ -91,16 +91,9 @@ const ImageList = ({ content, config }) => {
       e.target.previousElementSibling.style.display = 'unset';
   };
 
-  const itemProps = {
-    itemID: `urn:aemconnection:${content._path}/jcr:content/data/master`,
-    itemfilter: 'cf',
-    itemType: 'reference',
-    'data-editor-itemlabel': `ImageList(${content.style})`
-  };
-
   return (
     <React.Fragment>
-      <section className={`${content.style} list-container`} {...itemProps} itemScope>
+      <section className={`${content.style} list-container`}>
         {title && <h4>{title.join('')}</h4>}
         <i className='arrow left' onClick={e => scrollLeft(e, 300)}></i>
         <div className='list' id='list-container-body' onScroll={e => containerChange(e)}>
@@ -207,7 +200,7 @@ const ArticleCard = ({ item, config }) => {
 
   return (
     <div className='list-item' key={item._path} itemID={`urn:aemconnection:${item._path}/jcr:content/data/master`}
-      itemfilter='cf' itemType='reference' data-editor-itemlabel='Adventure Fragment' itemScope>
+      itemfilter='cf' itemType='reference' data-editor-itemlabel='Related Article' itemScope>
       <Image asset={item.thumbnail} config={config} alt={item.title} itemProp='thumbnail' width={width} height={height} imageSizes={articleCardImageSizes} />
       <Link key={item.path} name='test' to={LinkManager(item._path, config, context)}>
         <div className='details'>

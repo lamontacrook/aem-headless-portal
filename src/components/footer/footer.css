@@ -7,7 +7,6 @@ it.
 */
 footer {
   width: 100%;
-  background-color: #696969;
   position: relative;
   margin-top: 50px;
   z-index: 9;
@@ -34,7 +33,11 @@ footer {
 }
 
 .footer-xf .image {
-  width: 180px;
+  width: 300px;
+}
+
+.footer-xf .image img {
+  width: 100%;
 }
 
 .footer-xf .navigation {

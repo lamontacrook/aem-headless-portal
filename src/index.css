@@ -252,6 +252,7 @@ div[role=status] {
   --main-dark-background: rgba(41,41,41);
   --light-nav: #fff;
   --font-size-body: 18px;
+  --font-size-body-xxs: 12px;
   --line-height-body: 2.5;
   --fontSizeH1: 60px;
   --fontSizeH2: 28px;

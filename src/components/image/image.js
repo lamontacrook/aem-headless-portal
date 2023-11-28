@@ -23,6 +23,7 @@ const imageUrl = (context, asset) => {
 };
 
 const Image = ({ asset, alt = 'WKND image', itemProp='asset', width, height, imageSizes }) => {
+
   const context = useContext(AppContext);
 
   if(!asset) return (
@@ -30,17 +31,17 @@ const Image = ({ asset, alt = 'WKND image', itemProp='asset', width, height, ima
       <img src={context.brokenImage} alt='broken image' />
     </picture>
   );
-
-  let src = context.default ? asset?._publishUrl : asset?._authorUrl;
+  
+  const ueSrc = context.serviceURL.includes('publish-') ? `${context.serviceURL}${asset?._dynamicUrl?.substring(1)}` : asset?._authorUrl;
   
   width = width || asset?.width || '';
   height = height || asset?.height || '';
 
-  src = imageUrl(context, asset);
+  const src = imageUrl(context, asset);
 
   return (
     <picture>
-      <img loading='lazy' alt={alt} src={src} width={width} height={height} srcSet={srcSet(src, imageSizes)} sizes={sizes(imageSizes)} itemProp={itemProp} itemType="media" data-editor-itemlabel='Asset'/>
+      <img loading='lazy' alt={alt} src={ueSrc} width={width} height={height} srcSet={srcSet(src, imageSizes)} sizes={sizes(imageSizes)} itemProp={itemProp} itemType="media" data-editor-itemlabel='Asset'/>
     </picture>
   );
 };
