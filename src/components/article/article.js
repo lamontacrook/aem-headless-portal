@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import Image from '../image';
 import { mapJsonRichText } from '../../utils/renderRichText';
 import './article.css';
 
@@ -77,10 +76,8 @@ const productJSON = {
   ':type': 'sheet'
 };
 
-const Article = ({ content, config }) => {
+const Article = ({ content }) => {
   const [productHTML, setProductHTML] = useState([]);
-  const ArticleType = content.__typename;
-  const Element = `${content.titleTag}`;
   const editorProps = {
     itemID: `urn:aemconnection:${content._path}/jcr:content/data/master`,
     itemType: 'reference',
@@ -98,7 +95,7 @@ const Article = ({ content, config }) => {
       });
     });
     setProductHTML(products);
-  }, [productJSON]);
+  }, [content.relatedProduct]);
 
   // const products = 'https://main--cif--jihuang-adobe.hlx.page/products.json?sheet=trane';
   // fetch(products).then((res) => {
